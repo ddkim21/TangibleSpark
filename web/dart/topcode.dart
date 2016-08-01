@@ -44,15 +44,6 @@ class TopCode {
   }
 
 
-  void copyFrom(TopCode other) {
-    code = other.code;
-    unit = other.unit;
-    orientation = other.orientation;
-    x = other.x;
-    y = other.y;
-  }
-  
-  
   double get diameter => unit * WIDTH;
          set diameter(double d) => unit = d / WIDTH;
 
