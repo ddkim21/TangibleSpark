@@ -71,10 +71,10 @@ class Component {
     // if we didnt' find both codes, we estimate the position of 
     // the opposite code based on the position of the first code
     if (foundLeft && !foundRight) {
-      _copyTo(leftCode, rightCode, 2.8);
+      _copyTo(leftCode, rightCode, 3);
     }
     else if (foundRight && !foundLeft) {
-      _copyTo(rightCode, leftCode, -2.8);
+      _copyTo(rightCode, leftCode, -3);
     }
 
     // fine tune orientations of the left and right code 
@@ -86,12 +86,12 @@ class Component {
 
     // set connector positions
     {
-      leftJoint.x = leftCode.targetX(-1.25, 0);
-      leftJoint.y = leftCode.targetY(-1.25, 0);
+      leftJoint.x = leftCode.targetX(-1.5, 0);
+      leftJoint.y = leftCode.targetY(-1.5, 0);
       leftJoint.radius = leftCode.radius / 2;
       leftJoint.clear();
-      rightJoint.x = rightCode.targetX(1.25, 0);
-      rightJoint.y = rightCode.targetY(1.25, 0);
+      rightJoint.x = rightCode.targetX(1.5, 0);
+      rightJoint.y = rightCode.targetY(1.5, 0);
       rightJoint.radius = rightCode.radius / 2;
       rightJoint.clear();
     }
