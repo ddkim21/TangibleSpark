@@ -78,7 +78,7 @@ class Component {
     }
 
     // fine tune orientations of the left and right code 
-    if (foundLeft || foundRight) {
+    if (foundLeft && foundRight) {
       num between = rightCode.angleBetween(leftCode);
       leftCode.orientation = between;
       rightCode.orientation = between;
@@ -128,8 +128,8 @@ class Component {
 
     // the position is pretty jittery, but we can't assume that it will 
     // stay as fixed as the unit
-    match.x = match.x * 0.5 + found.x * 0.5;
-    match.y = match.y * 0.5 + found.y * 0.5;
+    match.x = match.x * 0.8 + found.x * 0.2;
+    match.y = match.y * 0.8 + found.y * 0.2;
 
     // we've found at least one topcode, so this component is visible
     visible = true; 
@@ -140,8 +140,8 @@ class Component {
 
 
   void _copyTo(TopCode src, TopCode opposite, num dx) {
-    opposite.x = src.targetX(dx, 0);
-    opposite.y = src.targetY(dx, 0);
+    opposite.x = opposite.x * 0.8 + src.targetX(dx, 0) * 0.2;
+    opposite.y = opposite.y * 0.8 + src.targetY(dx, 0) * 0.2;
     opposite.orientation = src.orientation;
     opposite.unit = src.unit;
   }
