@@ -1,0 +1,4 @@
+name: TangibleSpark
+
+dependencies:
+  browser: any

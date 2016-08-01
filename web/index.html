@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tangible Spark</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700italic" rel="stylesheet">   
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="content">
+      
+    <video id="video-stream"></video>
+    <canvas id="video-canvas" width="1280" height="720"></canvas>
+      
+    <div id="scan-message">Looking for TopCodes...</div>
+      
+    <button id="camera-button"><span class="fa fa-video-camera"></span></button>
+  </div>
+
+  <script type="application/dart" src="dart/main.dart"></script>
+  <script src="packages/browser/dart.js"></script>
+  <script src="js/adapter-0.2.9.js"></script>
+  <script src="js/video.js"></script>
+
+  <script id="components-definition" type="application/json" src="json/components.json">
+[
+  {
+    "name" : "resistor",
+    "id" : "r1",
+    "left-code" : 313,
+    "right-code" : 361
+  },
+
+  {
+    "name" : "wire",
+    "id" : "w1",
+    "left-code" : 203,
+    "right-code" : 271
+  },
+
+  {
+    "name" : "battery",
+    "id" : "b1",
+    "left-code" : 155,
+    "right-code" : 93
+  }
+]
+  </script>
+</body>
+</html>
