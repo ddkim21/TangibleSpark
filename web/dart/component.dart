@@ -86,12 +86,12 @@ class Component {
 
     // set connector positions
     {
-      leftJoint.x = leftCode.targetX(-1.5, 0);
-      leftJoint.y = leftCode.targetY(-1.5, 0);
+      leftJoint.x = leftCode.targetX(-1.2, 0);
+      leftJoint.y = leftCode.targetY(-1.2, 0);
       leftJoint.radius = leftCode.radius / 2;
       leftJoint.clear();
-      rightJoint.x = rightCode.targetX(1.5, 0);
-      rightJoint.y = rightCode.targetY(1.5, 0);
+      rightJoint.x = rightCode.targetX(1.2, 0);
+      rightJoint.y = rightCode.targetY(1.2, 0);
       rightJoint.radius = rightCode.radius / 2;
       rightJoint.clear();
     }
@@ -115,6 +115,20 @@ class Component {
     return false;
   }
 
+  Map toJSON() {
+    Map json = new Map();
+    json["id"] = this.id;
+    json["type"] = this.name;
+    json["leftJoint"] = {
+      "x" : this.leftJoint.x,
+      "y" : this.leftJoint.y
+    };
+    json["rightJoint"] = {
+      "x" : this.rightJoint.x,
+      "y" : this.rightJoint.y
+    };
+    return json;
+  }
 
   void _initLocation(TopCode found, TopCode match, TopCode opposite) {
 
