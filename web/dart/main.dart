@@ -14,6 +14,13 @@ part 'scanner.dart';
 part 'topcode.dart';
 part 'utils.dart';
 
+part 'circuitAnalysis/init.dart';
+part 'circuitAnalysis/Circuit.dart';
+part 'circuitAnalysis/Matrix.dart';
+part 'circuitAnalysis/LUDecomposition.dart';
+part 'circuitAnalysis/QRDecomposition.dart';
+part 'circuitAnalysis/KVLSolver.dart';
+
 
 // IMPORTANT! This has to match js/video.js
 const VIDEO_WIDTH = 1280; //1920; // 1280; // 800
